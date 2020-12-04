@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <title>Civic Connect Home Page</title>
+</head>
+
+<style>
+    .h_container{
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative;
+        z-index: 1000;
+        display: inline-block;
+    }
+
+    .index_page_container{
+        width: 100%; 
+        max-width: 1250px;
+        margin: 100px auto; 
+        text-align: center;
+    }
+</style>
+
+
+<div class="index_page_container">
+
+    <!-- Page Header -->
+    <div class="h_container">
+        {% if user.is_authenticated %}
+            <h1>Welcome, {{ user.first_name }}!</h1>
+        {% else %}
+            <h1>Civic Connect: Contact Your Representatives About Policy Issues!</h1>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <!-- Application Information -->
+    <br>
+    <p>Civic Connect is an application that puts you in contact with your representatives at the federal, state, or local level!</p>
+    <p>A Civic Connect account will allow you to access a number of pre-generated templates to contact your representatives in whichever way you see fit, whether that be by
+    email, phone, or letter!</p>
+    <p>Our service also includes ways for you to suggest new templates, or email your representative right from inside the application!</p>
+    <p>Click the green button at the top to login, or click on one of the tabs at the top to get started!!</p>
+</div>
+
+{% endblock content %}

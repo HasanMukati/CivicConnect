@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if posts %}
+<title>Templates for {{ category }} Category</title>
+{% endif %}
+
+<style>
+    .button_container{
+      font-weight: 900;
+      background-color: rgba(84, 151, 45, 0.938);
+    }
+
+    .our_page_container{ 
+        text-align: center;   
+        padding-top: 80px;
+    }
+
+    .heading{
+        text-align: center;
+        background-color: rgb(233,236,239) ;
+        border-radius: 10px;
+        height: 100px;
+        padding-top: 10px;
+        padding-bottom: 100px;
+        margin-bottom: 150px;
+    }
+  
+</style>
+
+<body>
+    <div class="our_page_container">
+    </div>
+    <body>
+        <div class="container">
+
+
+            <div class="heading">
+                <header class="heading">
+                    {% if user.is_authenticated %}
+                        <h2>Civic Connect - {{category}} Templates</h2>
+                        <h5>Choose between email, phone, and letter templates below!</h5>
+                    {% else %}
+                        <h2>Civic Connect - Honda Civics</h2>
+                        <h4>Don't Forget to Login!</h4>
+                    {% endif %}
+                </header>
+        </div>
+
+
+        </div>
+
+
+        {% if posts %}
+            {% for i in posts %}
+                <div class="container" style="height: 40; width: 350px; padding-left: 20px; padding-right: 20px;">
+                    <br>
+                    <div class="col">
+                        <div class="card h-75">
+                            <a href="{{ i.slug }}" class="btn btn-primary"> {{ i.title }} </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+
+    </body>
+    </div>
+</body>
+
+{% endblock content %}

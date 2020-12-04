@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title>Template Categories</title>
+
+<body>
+
+    <div class="our_page_container">
+
+        <div class="h_container">
+
+            <style>
+                .h_container{
+                    text-align: center;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    position: relative;
+                    z-index: 1000;
+                    display: inline-block,
+                }
+
+                .heading{
+                    text-align: center;
+                     position: relative; 
+                     width: 100%; 
+                     max-width: 600px; 
+                     margin: 100px auto;
+                }
+
+                .button_container{
+                    font-weight: 900;
+                    background-color: rgba(84, 151, 45, 0.938);
+                }
+
+                .our_page_container{ 
+                    text-align: center; 
+                    position: relative; 
+                    width: 100%; 
+                    max-width: 600px; 
+                    margin: 100px auto;
+                }
+
+                .head {
+                    height: 100;
+                    text-align: center;
+                }
+
+                .head1{
+                    text-align: center;
+                    color: rgb(52,58,64);
+                }
+            </style>
+
+        </div>
+
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+    <!-- Jumbotron Header -->
+    <div class="head">
+    <header class="jumbotron my-">
+
+    {% if user.is_authenticated %}
+      <div class="head1">
+        <h2>Civic Connect - Policy Categories</h2>
+        <h5>View Templates Below!</h5>
+        <a href="/feedback" class="btn btn-primary">Don't see the category you're looking for? Click Here to Submit/Suggest a Template!</a>
+      </div>
+    {% else %}
+      <h2>Civic Connect - Policy Categories</h2>
+      <a href="/accounts/google/login/" class="btn btn-success btn-lg">Login to access content!</a>
+      {% endif %}
+
+      </header>  
+    </div>
+    <!-- Page Features -->
+    <div class="row text-center">
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-60">
+            <img class="card-img-top" src="https://www.flaticon.com/svg/static/icons/svg/3379/3379857.svg" height="256" width="256" 
+            style="padding-left: 15px; padding-right: 15px; padding-bottom: 15px; padding-top: 15px" alt="">
+                <div class="card-footer">
+                    <a href="Education/" class="btn btn-primary">Education</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-60">
+            <img class="card-img-top" src="https://media.istockphoto.com/vectors/female-woman-feminism-protest-hand-icon-vector-vector-id1131677553?k=6&m=1131677553&s=612x612&w=0&h=RGtXjtPkOyxA_hQ5leJts_rIAI1Nnnugd5k4BWLxBgs=" height="256" width="340" 
+            style="padding-left: 15px; padding-right: 15px; padding-top: 15px" alt="">
+                <div class="card-footer">
+                    <a href="WomensRights/" class="btn btn-primary">Women's Rights</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-60">
+            <img class="card-img-top" src="https://www.flaticon.com/svg/static/icons/svg/3143/3143616.svg" height="256" width="256" 
+            style="padding-left: 15px; padding-right: 15px; padding-bottom: 15px; padding-top: 15px" alt="">
+                <div class="card-footer">
+                    <a href="Healthcare/" class="btn btn-primary">Healthcare</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-60">
+            <img class="card-img-top" src="https://www.flaticon.com/svg/static/icons/svg/3154/3154330.svg" height="256" width="256" 
+            style="padding-left: 20px; padding-right: 20px; padding-bottom: 20px; padding-top: 20px" alt="">
+                <div class="card-footer">
+                    <a href="Black-Lives-Matter/" class="btn btn-primary">Black Lives Matter</a>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    <!-- /.row -->
+
+    </div>
+</body>
+
+{% endblock content %}
+

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<head>
+    <title>You're In</title>
+</head>
+
+<div class="our_page_container">
+
+    <div class="h_container">
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }} !</p>
+        {% else %}
+            <h1>Congratulations! You're Logged in!</h1>
+        {% endif %}
+    </div>
+
+    <p>Welcome to the accounts page.</p>
+</div>
+<body>
+    <style>
+        .h_container{
+            text-align: center;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: relative;
+            z-index: 1000;
+            display: inline-block,
+        }
+
+        .button_container{
+            font-weight: 900;
+            background-color: rgba(84, 151, 45, 0.938);
+        }
+
+        .our_page_container{ 
+            width: 100%; 
+            max-width: 600px; 
+            margin: 100px auto;
+        }
+    </style>
+
+{% endblock content %}

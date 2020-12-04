@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <style>
+    .h_container{
+      text-align: center;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: relative;
+      z-index: 1000;
+      display: inline-block,
+    }
+    .our_page_container{
+      width: 100%;
+      max-width: 600px;
+      margin: 100px auto;
+    }
+    </style>
+
+<head>
+    <title>Logout Successful</title>
+</head>
+<body>
+    <div class="our_page_container">
+      <div class="h_container">
+        {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }} ! Dunno how you got here, but enjoy your stay!</p>
+        {% else %}
+        <h1> Successfully Logged Out!</h1>
+        {% endif %}
+        <br>
+        <a href="/" class="btn btn-primary">Click Here to Return to Homepage</a>
+      </div>
+    </div>
+</body>
+
+
+
+{% endblock content %}

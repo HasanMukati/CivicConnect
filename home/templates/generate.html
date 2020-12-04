@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title>Generated Message Page</title>
+
+<style>
+    .container{
+        padding-top: 40px;
+    }
+
+    #id_name{
+        width:100%
+    }
+
+    #id_message{
+        width:100%
+    }
+
+    #id_email{
+        width:100% 
+    }
+
+    .heading{
+        text-align: center;
+        background-color: rgb(233,236,239) ;
+        border-radius: 10px;
+        height: 40px;
+        padding-top: 5px;
+    }
+
+</style>
+
+<div class="container ">
+
+    <div class="container">
+
+        <div class="heading">
+            <header class="heading">
+                <h4>Generated Message!</h4>
+            <br>
+            </header>
+        </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br>
+
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                {{ field.errors }}
+                <label>{{ field.label_tag }}</label>
+                <p>{{ field }}</p>
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <label><label for="id_message">Generated Message:</label></label>
+            <p><textarea name="message" cols="40" rows="10" required="" id="id_message" readonly>{{text}}</textarea></p>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="btn btn-primary" href="/contact/?text={{text}}" googl="true">Email Your Representative!</a>
+        </form>
+    </form>
+
+</div>
+
+
+{% endblock content %}
+
+
+<!-- FORM TAKEN FROM: https://github.com/the-kodechamp/django_blog_tutorial/blob/master/blog/templates -->
